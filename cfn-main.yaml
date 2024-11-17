@@ -36,6 +36,7 @@ Parameters:
   KeyName:
     Type: AWS::EC2::KeyPair::KeyName
     Description: Name of EC2 KeyPair SSH Connection
+    Default: "tf_key"
     ConstraintDescription: A valid KeyPair name is required.
 
 Resources:
@@ -203,7 +204,7 @@ Resources:
         Timeout: PT15M
     Properties:
       InstanceType: "t2.micro"
-      KeyName: tf_key
+      KeyName: !Ref KeyName
       ImageId: !Ref "LatestAmiId"
       Tags:
         - Key: Name
@@ -229,7 +230,7 @@ Resources:
     Type: AWS::EC2::Instance
     Properties: 
       InstanceType: "t2.micro"
-      KeyName: tf_key
+      KeyName: !Ref KeyName
       ImageId: !Ref "LatestAmiId"
       Tags:
         - Key: Name
