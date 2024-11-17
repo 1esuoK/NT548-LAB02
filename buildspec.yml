@@ -10,10 +10,8 @@ phases:
 
   build:
     commands:
-      - echo "Running cfn-lint"
-      - cfn-lint template.yaml # Thay 'template.yaml' bằng tên của template CloudFormation của bạn
-      - echo "Running taskcat for CloudFormation validation"
-      - taskcat test run --config .taskcat.yml # Kiểm tra template với Taskcat
+      - cfn-lint cfn-main.yaml
+      - taskcat test run 
 
 artifacts:
   files:
