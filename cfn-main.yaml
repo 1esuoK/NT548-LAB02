@@ -148,7 +148,6 @@ Resources:
     Properties:
       SubnetId: !Ref PrivateSubnet
       RouteTableId: !Ref PrivateRouteTable
-    DependsOn: [PrivateRouteTable, PrivateSubnet] 
 
 #========== DEFAULT SG FOR VPC
   DefaultSecurityGroup:
