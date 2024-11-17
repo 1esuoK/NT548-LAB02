@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - pip install cfn-lint
+      - pip install taskcat
+
+  build:
+    commands:
+      - echo "Running cfn-lint"
+      - cfn-lint template.yaml # Thay 'template.yaml' bằng tên của template CloudFormation của bạn
+      - echo "Running taskcat for CloudFormation validation"
+      - taskcat test run --config .taskcat.yml # Kiểm tra template với Taskcat
+
+artifacts:
+  files:
+    - '**/*'
