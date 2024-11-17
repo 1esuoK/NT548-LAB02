@@ -203,7 +203,7 @@ Resources:
         Timeout: PT15M
     Properties:
       InstanceType: "t2.micro"
-      KeyName: !Ref KeyName
+      KeyName: tf_key
       ImageId: !Ref "LatestAmiId"
       Tags:
         - Key: Name
@@ -229,7 +229,7 @@ Resources:
     Type: AWS::EC2::Instance
     Properties: 
       InstanceType: "t2.micro"
-      KeyName: !Ref KeyName
+      KeyName: tf_key
       ImageId: !Ref "LatestAmiId"
       Tags:
         - Key: Name
