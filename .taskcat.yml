@@ -1,5 +1,5 @@
 project:
-  name: CloudFormationTest
+  name: cloudformationtest
   regions:
     - us-east-1
 
